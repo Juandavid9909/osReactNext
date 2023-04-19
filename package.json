@@ -4,7 +4,10 @@
     "description": "Desktop environment in the browser with react and next",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
     },
     "repository": {
         "type": "git",
@@ -12,8 +15,11 @@
     },
     "author": "Juan Varela",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Juandavid9909/osReactNext/issues"
-    },
-    "homepage": "https://github.com/Juandavid9909/osReactNext#readme"
+    "dependencies": {
+        "eslint": "8.38.0",
+        "eslint-config-next": "13.3.0",
+        "next": "13.3.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    }
 }
