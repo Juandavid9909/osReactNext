@@ -1,0 +1,19 @@
+{
+    "name": "windows-os",
+    "version": "1.0.0",
+    "description": "Desktop environment in the browser with react and next",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Juandavid9909/osReactNext.git"
+    },
+    "author": "Juan Varela",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Juandavid9909/osReactNext/issues"
+    },
+    "homepage": "https://github.com/Juandavid9909/osReactNext#readme"
+}
