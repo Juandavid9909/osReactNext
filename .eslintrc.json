@@ -6,12 +6,14 @@
     "node": true
   },
   "extends": [
-    // "standard-with-typescript",
-    // "eslint:recommend",
-    "plugin:@typescript-eslint/recommended"
-    // "plugin:jest/recommended",
-    // "plugin:react/recommended",
-    // "prettier"
+    "standard-with-typescript",
+    "eslint:recommend",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:jest/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
   ],
   "globals": {
     "React": "readonly"
@@ -24,6 +26,7 @@
   "plugins": ["@typescript-eslint", "jest", "react", "simple-import-sort"],
   "rules": {
     "comma-dangle": ["error", "never"],
+    "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
     "max-lines": ["error", 80],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "react/jsx-props-no-spreading": "off",
