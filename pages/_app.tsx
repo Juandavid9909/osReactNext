@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { name, description } from "package.json";
+import defaultTheme from "themes/default.json";
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -18,12 +19,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const theme = {
-  colors: {
-    primary: "#008080"
-  }
-};
-
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   return(
     <>
@@ -34,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
 
       <GlobalStyle />
 
-      <ThemeProvider theme={ theme }>
+      <ThemeProvider theme={ defaultTheme }>
         <Component {...pageProps}/>
       </ThemeProvider>
     </>
