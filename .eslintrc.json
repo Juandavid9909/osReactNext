@@ -6,12 +6,12 @@
     "node": true
   },
   "extends": [
-    "standard-with-typescript",
-    "eslint:recommend",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended",
-    "plugin:react/recommended",
-    "prettier"
+    // "standard-with-typescript",
+    // "eslint:recommend",
+    "plugin:@typescript-eslint/recommended"
+    // "plugin:jest/recommended",
+    // "plugin:react/recommended",
+    // "prettier"
   ],
   "globals": {
     "React": "readonly"
@@ -26,6 +26,7 @@
     "max-lines": ["error", 80],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "react/jsx-props-no-spreading": "off",
+    "semi": ["error", "always"],
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error"
   },
