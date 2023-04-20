@@ -1,8 +1,20 @@
 import '@/styles/globals.scss';
 
-import { AppProps } from 'next/app';
-import { ReactElement } from 'react';
+import type { AppProps } from 'next/app';
+import type { ReactElement } from 'react';
+
+import Head from 'next/head';
+
+import { name } from "package.json";
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
-  return <Component {...pageProps} />;
+  return(
+    <>
+      <Head>
+        <title>{ name }</title>
+      </Head>
+
+      <Component {...pageProps}/>
+    </>
+  );
 }
