@@ -6,12 +6,6 @@ import withServerStyleSheet from 'utils/withServerStyleSheet';
 
 class MyDocument extends Document {
 
-  // static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
-  //   const initialProps = await Document.getInitialProps(ctx);
-
-  //   return {...initialProps};
-  // }
-
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     return withServerStyleSheet(ctx);
   }
