@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
-import Title from 'styles/generic/Title';
+import HelloWorld from 'components/apps/HelloWorld';
 
 export default function Home(): ReactElement {
-  return <Title>Hello, World!</Title>;
+  return <HelloWorld />;
 }
