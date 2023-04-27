@@ -1,7 +1,7 @@
 import { ComponentType } from "react";
 
 export type Process = {
-  Component: any // ComponentType
+  Component: ComponentType
 }
 
 export type Processes = {
