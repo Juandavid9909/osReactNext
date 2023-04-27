@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 
-const processDirectory = {
+import { Processes } from "types/utils/processDirectory";
+
+const processDirectory: Processes = {
   HelloWorld: {
     Component: dynamic(() => import("components/apps/HelloWorld"))
   }

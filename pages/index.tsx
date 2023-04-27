@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
-import processDirectory from 'utils/processDirectory';
+import ProcessLoader from 'contexts/process';
 
 export default function Home(): ReactElement {
-  return <processDirectory.HelloWorld.Component />;
+  return <ProcessLoader />;
 }
