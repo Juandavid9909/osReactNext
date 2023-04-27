@@ -10,7 +10,5 @@ test("renders index page" , () => {
     </StyledApp>
   );
 
-  const helloWorldElement = getByText("Hello, World!");
-
-  expect(helloWorldElement).toBeInTheDocument()
+  expect(getByText("Hello, World!")).toBeInTheDocument();
 });
