@@ -2,7 +2,12 @@
     "name": "windows-os",
     "version": "1.0.0",
     "description": "Desktop environment in the browser with react and next",
-    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Juandavid9909/osReactNext.git"
+    },
+    "author": "Juan Varela",
+    "license": "MIT",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -14,12 +19,6 @@
         "test": "jest",
         "test:watch": "jest --watch"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Juandavid9909/osReactNext.git"
-    },
-    "author": "Juan Varela",
-    "license": "MIT",
     "dependencies": {
         "eslint-config-next": "13.3.0",
         "next": "13.3.0",
