@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { ProcessConsumer } from 'contexts/process';
 
-const WindowManager: FC = () => (
+const ProcessLoader: FC = () => (
   <ProcessConsumer>
     { ({ processes }) => Object.entries(processes).map(([id, { Component }]) =>
       <Component key={ id } />
@@ -10,4 +10,4 @@ const WindowManager: FC = () => (
   </ProcessConsumer>
 )
 
-export default WindowManager;
+export default ProcessLoader;
