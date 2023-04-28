@@ -1,15 +1,25 @@
-import type { FC } from 'react';
-
 import { ProcessConsumer } from 'contexts/process';
+import dynamic from 'next/dynamic';
+import type { FC } from 'react';
+import type { Process } from 'types/contexts/process';
 
-import Window from 'components/system/Window';
+const Window = dynamic(() => import("components/system/Window"));
+
+const RenderProcess: FC<Process> = ({ Component, hasWindow }) => hasWindow ? (
+  <Window>
+    <Component />
+  </Window>
+) : (
+  <Component />
+);
 
 const ProcessLoader: FC = () => (
   <ProcessConsumer>
-    { ({ processes }) => Object.entries(processes).map(([id, { Component, hasWindow }]) =>
-      hasWindow ? <Window key={ id }><Component /></Window>
-      : <Component key={ id } />
-    ) }
+    { ({ processes }) =>
+      Object.entries(processes).map(([id, process]) => (
+        <RenderProcess key={ id } {...process} />
+      ))
+    }
   </ProcessConsumer>
 )
 

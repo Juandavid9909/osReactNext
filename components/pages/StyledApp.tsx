@@ -1,13 +1,9 @@
-import { FC } from 'react';
-
+import { SessionConsumer } from 'contexts/session';
+import type { FC } from 'react';
+import type { StyledAppProps } from 'types/components/pages/StyledApp';
 import { ThemeProvider } from 'styled-components';
-
 import GlobalStyle from 'styles/GlobalStyle';
 import themes from "styles/themes.json";
-
-import type { StyledAppProps } from 'types/components/pages/StyledApp';
-
-import { SessionConsumer } from 'contexts/session';
 
 const StyledApp: FC<StyledAppProps> = ({ children }) => (
   <>

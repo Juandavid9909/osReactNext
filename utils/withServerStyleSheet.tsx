@@ -1,6 +1,5 @@
 import type { DocumentContext, DocumentInitialProps } from 'next/document';
 import Document from 'next/document';
-
 import { ServerStyleSheet } from 'styled-components';
 
 const withServerStyleSheet = async (ctx: DocumentContext): Promise<DocumentInitialProps> => {
