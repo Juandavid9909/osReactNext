@@ -3,14 +3,13 @@ import type { FC } from 'react';
 import type { StyledAppProps } from 'types/components/pages/StyledApp';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
-import themes from "styles/themes.json";
 
-const StyledApp: FC<StyledAppProps> = ({ children }) => (
+const StyledApp: FC<StyledAppProps> = ({ children, currentTheme }) => (
   <>
     <GlobalStyle />
 
     <SessionConsumer>
-      { ({ theme }) => <ThemeProvider theme={ theme || themes.default }>
+      { ({ theme = currentTheme }) => <ThemeProvider theme={ theme }>
         { children }
       </ThemeProvider> }
     </SessionConsumer>
