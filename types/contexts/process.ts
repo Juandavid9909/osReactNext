@@ -1,7 +1,8 @@
 import { ComponentType } from "react";
 
 export type Process = {
-  Component: ComponentType
+  Component: ComponentType,
+  hasWindow: boolean
 }
 
 export type Processes = {
