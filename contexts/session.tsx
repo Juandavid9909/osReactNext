@@ -5,12 +5,12 @@ import type { ProcessProps } from "types/components/pages/Process";
 import type { SessionContextState } from "types/contexts/session";
 import { initialSessionContextState } from "utils/initialContextStates";
 
-const SessionContext = createContext<SessionContextState>(initialSessionContextState);
+const { Consumer, Provider } = createContext<SessionContextState>(initialSessionContextState);
 
 export const SessionProvider: FC<ProcessProps> = ({ children }) => (
-  <SessionContext.Provider value={ useSessionContextState() }>
+  <Provider value={ useSessionContextState() }>
     { children }
-  </SessionContext.Provider>
+  </Provider>
 );
 
-export const SessionConsumer = SessionContext.Consumer;
+export const SessionConsumer = Consumer;
