@@ -5,15 +5,12 @@ import GlobalStyle from 'styles/GlobalStyle';
 import themes from 'styles/themes';
 
 const StyledApp: FC<any> = ({ children }) => (
-  <>
-    <GlobalStyle />
-
-    <SessionConsumer>
-      { ({ themeName }) => <ThemeProvider theme={ themes[themeName] || themes.defaultTheme }>
-        { children }
-      </ThemeProvider> }
-    </SessionConsumer>
-  </>
+  <SessionConsumer>
+    { ({ themeName }) => <ThemeProvider theme={ themes[themeName] || themes.defaultTheme }>
+      <GlobalStyle />
+      { children }
+    </ThemeProvider> }
+  </SessionConsumer>
 );
 
 export default StyledApp;
