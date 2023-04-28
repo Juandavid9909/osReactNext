@@ -7,13 +7,17 @@ import themes from "styles/themes.json";
 
 import type { StyledAppProps } from 'types/components/pages/StyledApp';
 
-const StyledApp: FC<StyledAppProps> = ({ children, theme = themes.default }) => (
+import { SessionConsumer } from 'contexts/session';
+
+const StyledApp: FC<StyledAppProps> = ({ children }) => (
   <>
     <GlobalStyle />
 
-    <ThemeProvider theme={ theme }>
-      { children }
-    </ThemeProvider>
+    <SessionConsumer>
+      { ({ theme }) => <ThemeProvider theme={ theme || themes.default }>
+        { children }
+      </ThemeProvider> }
+    </SessionConsumer>
   </>
 );
 
