@@ -4,21 +4,18 @@ import type { DefaultTheme } from "styled-components";
 const colors = {
   background: "#000",
   primary: "#000000",
+  startButton: "#FFF",
   taskbar: "rgba(0, 0, 0, 0.6)",
   window: "#808080"
 };
 
-const fonts = {
-  clock: {
-    size: "12px"
-  }
-};
-
 const sizes = {
   clock: {
+    fontSize: "12px",
     width: "76px"
   },
   startButton: {
+    size: "19px",
     width: "36px"
   },
   taskbar: {
@@ -38,6 +35,6 @@ const wallpaper = vantaWaves({
   zoom: 0.9
 });
 
-const defaultTheme: DefaultTheme = { colors, fonts, sizes, wallpaper };
+const defaultTheme: DefaultTheme = { colors, sizes, wallpaper };
 
 export default defaultTheme;
