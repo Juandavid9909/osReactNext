@@ -8,6 +8,7 @@ export default function App({ Component, pageProps }: AppProps): React.ReactElem
     <>
       <Metadata />
 
+      {/* @ts-ignore */}
       <SessionProvider>
         <StyledApp>
           <Component {...pageProps}/>
