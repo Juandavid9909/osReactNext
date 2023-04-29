@@ -3,6 +3,7 @@ import type { DefaultTheme } from "styled-components";
 
 const colors = {
   background: "#000",
+  clockText: "rgba(255, 255, 255, 0.8)",
   primary: "#000000",
   startButton: "#FFF",
   taskbar: "rgba(0, 0, 0, 0.6)",
