@@ -10,6 +10,25 @@ const colors = {
   window: "#808080"
 };
 
+const date: Intl.DateTimeFormatOptions = {
+  weekday: "long",
+  month: "long",
+  day: "numeric",
+  year: "numeric"
+};
+
+const time: Intl.DateTimeFormatOptions = {
+  hour: "numeric",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: true
+};
+
+const formats = {
+  date,
+  time
+};
+
 const sizes = {
   clock: {
     fontSize: "12px",
@@ -36,6 +55,6 @@ const wallpaper = vantaWaves({
   zoom: 0.9
 });
 
-const defaultTheme: DefaultTheme = { colors, sizes, wallpaper };
+const defaultTheme: DefaultTheme = { colors, formats, sizes, wallpaper };
 
 export default defaultTheme;
