@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { description, name } from "package.json";
 
-const Metadata: React.FC = () => (
+const Metadata = (): JSX.Element => (
   <Head>
     <title>{ name }</title>
     <meta name="description" content={ description } />
