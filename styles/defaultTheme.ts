@@ -4,6 +4,7 @@ import type { DefaultTheme } from "styled-components";
 const colors = {
   background: "#000",
   primary: "#000000",
+  taskbar: "rgba(0, 0, 0, 0.6)",
   window: "#808080"
 };
 
