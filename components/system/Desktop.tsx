@@ -8,7 +8,7 @@ const Desktop: React.FC<any> = ({ children }) => {
   useWallpaper(desktopRef);
 
   return (
-    <StyledDesktop ref={ desktopRef } role="main">{ children }</StyledDesktop>
+    <StyledDesktop ref={ desktopRef }>{ children }</StyledDesktop>
   );
 }
 
