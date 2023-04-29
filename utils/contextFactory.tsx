@@ -1,5 +1,9 @@
 import { createContext } from "react";
-import { ContextFactory } from "types/contexts/contextFactory";
+
+type ContextFactory = <T> (initialContextState: T, useContextState: () => T) => {
+  Consumer: React.Consumer<T>,
+  Provider: React.FC
+}
 
 const contextFactory: ContextFactory = (initialContextState, useContextState) => {
   const { Consumer, Provider } = createContext(initialContextState);

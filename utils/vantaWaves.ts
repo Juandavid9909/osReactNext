@@ -1,6 +1,14 @@
 import * as THREE from "three";
-import type { VantaWavesSettings, WallpaperEffect } from 'types/styles/wallpaper';
+import type { WallpaperEffect } from 'types/styles/wallpaper';
 import WAVES from 'vanta/dist/vanta.waves.min';
+
+type VantaWavesSettings = {
+  color: number,
+  shininess: number,
+  waveHeight: number,
+  waveSpeed: number,
+  zoom: number
+}
 
 const disableControls = {
   mouseControls: false,
