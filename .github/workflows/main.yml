@@ -10,7 +10,7 @@ jobs:
     - name: Install NVM
       run: curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
     - name: Reload Shell configuration
-      run: source ~/.bashrc
+      run: source ~/.nvm/nvm.sh
     - name: nvm downgrade
       run: nvm install 12.18.0
     - name: nvm use downgrade
