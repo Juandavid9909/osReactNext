@@ -14,7 +14,7 @@ const useFileSystemContextState = (): FileSystemContextState => {
     }, () => {
       setFs(BrowserFS.BFSRequire("fs"));
     });
-  }, [setFs]);
+  }, []);
 
   {/* @ts-ignore */}
   return { fs };
