@@ -3,6 +3,7 @@ import type { DefaultTheme } from "styled-components";
 
 const colors = {
   background: "#000",
+  highlight: "#76B9ED",
   opaqueWhite: "rgba(255, 255, 255, 0.8)",
   primary: "#000000",
   startButton: "#FFF",
@@ -37,6 +38,12 @@ const sizes = {
   taskbar: {
     blur: "5px",
     entry: {
+      borderSize: "2px",
+      fontSize: "12px",
+      icon: {
+        margin: "0 5px",
+        size: "16px;"
+      },
       maxWidth: "161px"
     },
     height: "30px"
@@ -51,6 +58,11 @@ const wallpaper = vantaWaves({
   zoom: 0.9
 });
 
-const defaultTheme: DefaultTheme = { colors, formats, sizes, wallpaper };
+const defaultTheme: DefaultTheme = {
+  colors,
+  formats,
+  sizes,
+  wallpaper
+};
 
 export default defaultTheme;
