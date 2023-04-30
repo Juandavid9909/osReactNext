@@ -3,12 +3,13 @@ import type { Process } from 'types/contexts/process';
 
 const Window = dynamic(() => import("components/system/Window"));
 
-const RenderProcess = ({ Component, hasWindow }: Process): JSX.Element => hasWindow ? (
+const withWindow = (Component: React.ComponentType) => (
   <Window>
     <Component />
   </Window>
-) : (
-  <Component />
 );
+
+const RenderProcess = ({ Component, hasWindow }: Process): JSX.Element =>
+  hasWindow ? withWindow(Component) : <Component />;
 
 export default RenderProcess;
