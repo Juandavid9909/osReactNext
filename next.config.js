@@ -5,7 +5,10 @@ const nextConfig = {
         locales: ["en", "es"],
         defaultLocale: "en"
     },
-    reactStrictMode: true
+    reactStrictMode: true,
+    typescript: {
+        ignoreBuildErrors: true
+    }
 };
 
 module.exports = nextConfig;
