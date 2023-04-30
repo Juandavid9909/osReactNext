@@ -8,11 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install NVM
-      run: curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-    - name: Reload NVM
-      run: [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+      run: >
+        curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh
+        creates=/home/{{ ansible_user_id }}/.nvm/nvm.sh
     - name: Reload Shell configuration
-      run: source ~/.bashrc
+      run: /bin/bash -c "source ~/.nvm/nvm.sh
     - name: nvm downgrade
       run: nvm install 12.18.0
     - name: nvm use downgrade
