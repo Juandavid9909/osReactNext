@@ -7,12 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Install Node downgrade
-      run: npm i -g npm@6.14.4
     - name: Install Modules
       run: npm i
-    - name: Install Node upgrade
-      run: npm i -g npm@8.19.2
     - name: Run Build
       run: npm run build
     - name: Run Tests
