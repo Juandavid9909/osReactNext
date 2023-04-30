@@ -1,4 +1,3 @@
-// const BrowserFS = require("node_modules/browserfs/src/core/browserfs");
 import * as BrowserFS from "browserfs";
 import type { FSModule } from "browserfs/dist/node/core/FS";
 import { useEffect, useState } from "react";
