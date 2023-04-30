@@ -7,8 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Install NVM
+      run: npm i nvm
+    - name: nvm downgrade
+      run: nvm install 12.18.0
+    - name: nvm use downgrade
+      run: nvm use 12.18.0
     - name: Install Modules
       run: npm i
+    - name: nvm upgrade
+      run: nvm install 18.12.1
+    - name: nvm use upgrade
+      run: nvm use 18.12.1
     - name: Run Build
       run: npm run build
     - name: Run Tests
