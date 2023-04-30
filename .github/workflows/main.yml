@@ -9,8 +9,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install NVM
       run: curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    - name: Reload NVM
+      run: [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
     - name: Reload Shell configuration
-      run: source ~/.nvm/nvm.sh
+      run: source ~/.bashrc
     - name: nvm downgrade
       run: nvm install 12.18.0
     - name: nvm use downgrade
