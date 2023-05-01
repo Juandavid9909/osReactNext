@@ -3,7 +3,7 @@ import { ProcessConsumer } from 'contexts/process';
 
 const ProcessLoader = (): JSX.Element => (
   <ProcessConsumer>
-    { ({ processes }) => Object.entries(processes).map(([id, process]) => (
+    { ({ mapProcesses }) => mapProcesses(([id, process]) => (
       <RenderProcess key={ id } {...process} />
     )) }
   </ProcessConsumer>
