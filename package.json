@@ -24,9 +24,6 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.4.0",
-        "@fortawesome/free-brands-svg-icons": "^6.4.0",
-        "@fortawesome/react-fontawesome": "^0.2.0",
         "browserfs": "github:jvilk/BrowserFS#a96aa2d4",
         "eslint-config-next": "13.3.0",
         "ini": "^2.0.0",
