@@ -10,10 +10,10 @@ const withWindow = (Component: React.ComponentType) => (
 
 type RenderProcessProps = {
   Component: React.ComponentType,
-  hasWindow: boolean
+  hasWindow?: boolean
 };
 
-const RenderProcess = ({ Component, hasWindow }: RenderProcessProps): JSX.Element =>
+const RenderProcess = ({ Component, hasWindow = false }: RenderProcessProps): JSX.Element =>
   hasWindow ? withWindow(Component) : <Component />;
 
 export default RenderProcess;
