@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import type { WallpaperEffect } from 'types/styles/wallpaper';
+import type { WallpaperEffect } from "styles/styled";
 import WAVES from 'vanta/dist/vanta.waves.min';
 
 type VantaWavesSettings = {
