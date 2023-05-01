@@ -19,7 +19,7 @@ const useResizable = (maximized = false): Resizable => {
   const [{ height, width }, setSize] = useState<Size>(defaultWindowSize);
 
   const updateSize = useCallback<RndResizeCallback>(
-    (_event, direction, { style: { height: elementHeight, width: elementWidth } }) =>
+    (_event, _direction, { style: { height: elementHeight, width: elementWidth } }) =>
       setSize({ height: elementHeight, width: elementWidth }),
     []
   );
