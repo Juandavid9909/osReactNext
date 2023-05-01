@@ -10,6 +10,7 @@ declare module "styled-components" {
       primary: string,
       startButton: string,
       taskbar: string,
+      taskbarHover: string,
       window: string
     },
     formats: {
