@@ -6,7 +6,7 @@ const TaskbarEntries = (): JSX.Element => (
   <StyledTaskbarEntries>
     <ProcessConsumer>
       { ({ mapProcesses }) => mapProcesses(([id, { icon, title }]) => (
-        <TaskbarEntry key={ id } icon={ icon } title={ title } />
+        <TaskbarEntry key={ id } icon={ icon } id={ id } title={ title } />
       )) }
     </ProcessConsumer>
   </StyledTaskbarEntries>
