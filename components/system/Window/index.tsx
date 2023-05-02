@@ -10,11 +10,11 @@ type WindowProps = ProcessComponentProps & {
 };
 
 const Window = ({ children, id }: WindowProps): JSX.Element => {
-  const { processes: { [id]: { minimized } } } = useProcesses();
+  const { processes: { [id]: { backgroundColor, minimized } } } = useProcesses();
 
   return (
     <RndWindow id={ id }>
-      <StyledWindow minimized={ minimized }>
+      <StyledWindow minimized={ minimized } style={{ backgroundColor }}>
         <Titlebar id={ id } />
 
         { children }
