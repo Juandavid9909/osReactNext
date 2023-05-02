@@ -19,6 +19,7 @@
   "globals": {
     "React": "readonly"
   },
+  "ignorePatterns": ["public"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
