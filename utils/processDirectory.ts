@@ -8,7 +8,8 @@ export type Process = {
   icon: string,
   maximized?: boolean,
   minimized?: boolean,
-  title: string
+  title: string,
+  url?: string
 };
 
 export type Processes = {
