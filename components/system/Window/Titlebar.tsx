@@ -10,7 +10,7 @@ type TitlebarProps = {
 };
 
 const Titlebar = ({ id }: TitlebarProps): JSX.Element => {
-  const { processes: { [id]: { icon, title } } } = useProcesses();
+  const { processes: { [id]: { autoSizing, icon, title } } } = useProcesses();
   const { onClose, onMaximize, onMinimize } = useWindowActions(id);
 
   return (
@@ -28,7 +28,7 @@ const Titlebar = ({ id }: TitlebarProps): JSX.Element => {
           <MinimizeIcon />
         </Button>
 
-        <Button className="maximize" onClick={ onMaximize }>
+        <Button className="maximize" onClick={ onMaximize } disabled={ autoSizing }>
           <MaximizeIcon />
         </Button>
 
