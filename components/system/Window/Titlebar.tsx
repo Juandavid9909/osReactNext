@@ -28,7 +28,7 @@ const Titlebar = ({ id }: TitlebarProps): JSX.Element => {
           <MinimizeIcon />
         </Button>
 
-        <Button onClick={ onMaximize }>
+        <Button className="maximize" onClick={ onMaximize }>
           <MaximizeIcon />
         </Button>
 
