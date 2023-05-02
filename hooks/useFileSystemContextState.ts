@@ -16,7 +16,6 @@ const useFileSystemContextState = (): FileSystemContextState => {
     }
   }, [fs]);
 
-  {/* @ts-ignore */}
   return { fs };
 }
 

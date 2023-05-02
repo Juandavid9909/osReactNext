@@ -6,7 +6,6 @@ import { ProcessProvider } from 'contexts/process';
 
 const Home = (): React.ReactElement => (
   <Desktop>
-    {/* @ts-ignore */}
     <ProcessProvider>
         <FileManager directory="/desktop" />
 
