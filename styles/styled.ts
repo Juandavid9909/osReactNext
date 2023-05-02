@@ -35,7 +35,7 @@ declare module "styled-components" {
         width: string
       },
       startButton: {
-        size: string,
+        iconSize: string,
         width: string
       },
       taskbar: {
