@@ -1,4 +1,4 @@
-import { WindowsIcon } from "components/system/Icons";
+import WindowsIcon from "components/system/Taskbar/StartButton/WindowsIcon";
 import StyledStartButton from "components/system/Taskbar/StartButton/StyledStartButton";
 
 const StartButton = (): JSX.Element => (
