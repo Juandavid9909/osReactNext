@@ -19,7 +19,8 @@ const useFocusable = (id: string,windowRef: React.MutableRefObject<HTMLElement |
       ...currentStackOrder.filter((stackId) => stackId !== id)
     ]);
     setForegroundId(id);
-  }, [id, setForegroundId, setStackOrder]);
+    windowRef.current?.focus();
+  }, [id, setForegroundId, setStackOrder, windowRef]);
 
   useEffect(() => {
     if (isForeground) {
@@ -27,10 +28,7 @@ const useFocusable = (id: string,windowRef: React.MutableRefObject<HTMLElement |
     }
   }, [isForeground, moveToFront]);
 
-  useEffect(() => {
-    moveToFront();
-    windowRef.current?.focus();
-  }, [moveToFront, windowRef]);
+  useEffect(moveToFront, [moveToFront]);
 
   return {
     onBlur,
