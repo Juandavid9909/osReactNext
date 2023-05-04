@@ -21,7 +21,7 @@ const processDirectory: Processes ={
   HelloWorld: {
     Component: dynamic(() => import("components/apps/HelloWorld")),
     hasWindow: true,
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
     title: "Hello World"
   },
   V86: {
@@ -29,7 +29,7 @@ const processDirectory: Processes ={
     backgroundColor: "#000",
     Component: dynamic(() => import("components/apps/V86")),
     hasWindow: true,
-    icon: "/icons/v86.ico",
+    icon: "/icons/v86.png",
     title: "v86"
   }
 }
