@@ -1,3 +1,4 @@
+import colorCycle from "components/system/Desktop/wallpapers/colorCycle";
 import * as THREE from "three";
 import type { WallpaperEffect } from "styles/styled";
 import WAVES from 'vanta/dist/vanta.waves.min';
@@ -25,9 +26,15 @@ const vantaWaves = (settings: VantaWavesSettings): WallpaperEffect => (element) 
     ...settings
   }) : undefined;
 
-  return () => {
-    vantaEffect?.destroy?.();
+  if(vantaEffect) {
+    const { onDestroy } = colorCycle(settings.color, (color) => {
+      vantaEffect.options.color = color;
+    });
+
+    vantaEffect.onDestroy = onDestroy;
   }
+
+  return () => vantaEffect?.destroy?.();
 }
 
 export default vantaWaves;
