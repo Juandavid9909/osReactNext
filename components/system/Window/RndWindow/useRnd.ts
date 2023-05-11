@@ -8,8 +8,8 @@ import type { DraggableEventHandler } from "react-draggable";
 import type { Props, RndResizeCallback } from "react-rnd";
 
 const useRnd = (id: string, maximized = false): Props => {
+  const { windowStates: { [id]: windowState } = {} } = useSession();
   const { processes: { [id]: { autoSizing } } } = useProcesses();
-  const { windowStates: { [id]: windowState } } = useSession();
   const { position: statePosition, size: stateSize } = windowState || {};
   const [position, setPosition] = useDraggable(maximized, statePosition);
   const [size, setSize] = useResizable(maximized, autoSizing, stateSize);
