@@ -27,9 +27,7 @@ const vantaWaves = (settings: VantaWavesSettings): WallpaperEffect => (element) 
   }) : undefined;
 
   if(vantaEffect) {
-    const { onDestroy } = colorCycle(settings.color, (color) => {
-      vantaEffect.options.color = color;
-    });
+    const { onDestroy } = colorCycle(settings.color, (color) => vantaEffect.setOptions({ color }));
 
     vantaEffect.onDestroy = onDestroy;
   }
