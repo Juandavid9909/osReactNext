@@ -23,8 +23,8 @@ const useFileInfo = (path: string): FileInfo => {
   useEffect(() => {
     if(fs) {
       const extension = extname(path).toLowerCase();
-      const getInfoByFileExtension = () => setInfo({
-        icon: getIconByFileExtension(extension),
+      const getInfoByFileExtension = (icon?: string) => setInfo({
+        icon: icon || getIconByFileExtension(extension),
         pid: getProcessByFileExtension(extension),
         url: path
       });
@@ -42,12 +42,8 @@ const useFileInfo = (path: string): FileInfo => {
         });
       }
       else if(IMAGE_FILE_EXTENSIONS.includes(extension)) {
-        fs.readFile(path, (_error, contents = Buffer.from("")) =>
-          setInfo({
-            icon: bufferToUrl(contents),
-            pid: "ImageViewer",
-            url: path
-          })
+        fs.readFile(path, (error, contents = Buffer.from("")) =>
+          getInfoByFileExtension(error ? "/icons/photo.png" : bufferToUrl(contents))
         );
       }
       else {
