@@ -20,7 +20,9 @@ const colors = {
   highlight: "#76B9ED",
   startButton: "#FFF",
   taskbar: {
-    background: "rgba(0, 0, 0, 60%)",
+    active: 'hsla(0, 0%, 40%, 70%)',
+    activeHover: 'hsla(0, 0%, 50%, 70%)',
+    background: 'hsla(0, 0%, 10%, 70%)',
     hover: "hsla(0, 0%, 25%, 70%)",
   },
   text: "rgba(255, 255, 255, 80%)",
