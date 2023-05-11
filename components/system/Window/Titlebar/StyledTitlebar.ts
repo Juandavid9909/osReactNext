@@ -21,6 +21,7 @@ const StyledTitlebar = styled.header`
 
       img {
         height: ${ ({ theme }) => theme.sizes.titlebar.iconSize };
+        image-rendering: pixelated;
         margin: ${ ({ theme }) => theme.sizes.titlebar.iconMargin };
         width: ${ ({ theme }) => theme.sizes.titlebar.iconSize };
       }
