@@ -13,6 +13,7 @@ const useDoubleClick: DoubleClick = (handler, timeout = 500) => {
     }
     else {
       clearTimeout(timer.current);
+      event.stopPropagation();
       handler(event);
 
       timer.current = null;
