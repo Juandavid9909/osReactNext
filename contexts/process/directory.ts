@@ -2,30 +2,37 @@ import type { ProcessComponentProps } from 'components/system/Processes/RenderPr
 import dynamic from 'next/dynamic';
 
 export type ProcessElements = {
-  taskbarEntry?: HTMLElement;
+  taskbarEntry?: HTMLElement
 };
 
 export type ProcessToggles = {
-  maximized?: boolean;
-  minimized?: boolean;
+  maximized?: boolean,
+  minimized?: boolean,
 };
 
 export type Process = ProcessElements &
   ProcessToggles & {
-    autoSizing?: boolean;
-    backgroundColor?: string;
-    Component: React.ComponentType<ProcessComponentProps>;
-    hasWindow?: boolean;
-    icon: string;
-    title: string;
-    url?: string;
+    autoSizing?: boolean,
+    backgroundColor?: string,
+    Component: React.ComponentType<ProcessComponentProps>,
+    hasWindow?: boolean,
+    icon: string,
+    title: string,
+    url?: string
   };
 
 export type Processes = {
-  [id: string]: Process;
+  [id: string]: Process
 };
 
 const processDirectory: Processes = {
+  FileExplorer: {
+    backgroundColor: '#202020',
+    Component: dynamic(() => import('components/apps/FileExplorer')),
+    hasWindow: true,
+    icon: '/icons/explorer.png',
+    title: 'File Explorer'
+  },
   HelloWorld: {
     Component: dynamic(() => import('components/apps/HelloWorld')),
     hasWindow: true,
