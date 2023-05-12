@@ -1,11 +1,11 @@
-import useFileInfo from "components/system/Files/FileEntry/useFileInfo";
-import useDoubleClick from "components/system/useDoubleClick";
-import { useProcesses } from "contexts/process";
-import { createPid } from "contexts/process/functions";
-import { useSession } from "contexts/session";
-import { useCallback } from "react";
-import Button from "styles/common/Button";
-import Image from "styles/common/Image";
+import useFileInfo from 'components/system/Files/FileEntry/useFileInfo';
+import useDoubleClick from 'components/system/useDoubleClick';
+import { useProcesses } from 'contexts/process';
+import { createPid } from 'contexts/process/functions';
+import { useSession } from 'contexts/session';
+import { useCallback } from 'react';
+import Button from 'styles/common/Button';
+import Icon from 'styles/common/Icon';
 
 type FileEntryProps = {
   name: string,
@@ -19,20 +19,18 @@ const FileEntry = ({ name, path }: FileEntryProps): JSX.Element => {
   const onClick = useCallback(() => {
     const id = createPid(pid, url);
 
-    if(processes[id]) {
-      if(processes[id].minimized) minimize(id);
-
+    if (processes[id]) {
+      if (processes[id].minimized) minimize(id);
       setForegroundId(id);
-    }
-    else {
+    } else {
       open(pid, url);
     }
   }, [minimize, open, pid, processes, setForegroundId, url]);
 
   return (
-    <Button type="button" onClick={ useDoubleClick(onClick) }>
+    <Button onClick={ useDoubleClick(onClick) }>
       <figure>
-        <Image src={ icon } alt={ name } />
+        <Icon src={ icon } alt={ name } size={ 48 } />
 
         <figcaption>{ name }</figcaption>
       </figure>

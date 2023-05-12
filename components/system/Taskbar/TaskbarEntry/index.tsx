@@ -4,12 +4,12 @@ import { useProcesses } from 'contexts/process';
 import { useSession } from 'contexts/session';
 import { useCallback, useMemo } from 'react';
 import Button from 'styles/common/Button';
-import Image from 'styles/common/Image';
+import Icon from 'styles/common/Icon';
 
 type TaskbarEntryProps = {
-  icon: string;
-  id: string;
-  title: string;
+  icon: string,
+  id: string,
+  title: string
 };
 
 const TaskbarEntry = ({ icon, id, title }: TaskbarEntryProps): JSX.Element => {
@@ -23,11 +23,13 @@ const TaskbarEntry = ({ icon, id, title }: TaskbarEntryProps): JSX.Element => {
       [id]: { minimized }
     }
   } = useProcesses();
+
   const linkTaskbarEntry = useCallback(
     (taskbarEntry: HTMLButtonElement) =>
       linkElement(id, 'taskbarEntry', taskbarEntry),
     [id, linkElement]
   );
+
   const onClick = useCallback(() => {
     if (minimized || isForeground) {
       minimize(id);
@@ -38,14 +40,15 @@ const TaskbarEntry = ({ icon, id, title }: TaskbarEntryProps): JSX.Element => {
 
   return (
     <StyledTaskbarEntry foreground={isForeground}>
-      <Button onClick={onClick} ref={linkTaskbarEntry}>
+      <Button onClick={ onClick } ref={ linkTaskbarEntry }>
         <figure>
-          <Image src={icon} alt={title} />
-          <figcaption>{title}</figcaption>
+          <Icon src={ icon } alt={ title } size={ 16 } />
+
+          <figcaption>{ title }</figcaption>
         </figure>
       </Button>
     </StyledTaskbarEntry>
   );
-};
+}
 
 export default TaskbarEntry;
