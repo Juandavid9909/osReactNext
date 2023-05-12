@@ -1,4 +1,4 @@
-import type { DosCI, WindowWithDos } from 'components/apps/JSDOS/types';
+import type { DosCI } from 'components/apps/JSDOS/types';
 import useTitle from 'components/system/Window/useTitle';
 import useWindowSize from 'components/system/Window/useWindowSize';
 import { useFileSystem } from 'contexts/fileSystem';
@@ -20,12 +20,12 @@ const useJSDOS = (
       fs.readFile(url, (_error, contents = Buffer.from('')) =>
         loadFiles(['/libs/jsdos/js-dos.js', '/libs/jsdos/js-dos.css']).then(
           () => {
-            const DosWindow = window as WindowWithDos;
             const objectURL = bufferToUrl(contents);
 
             setTimeout(() => {
-              DosWindow.emulators.pathPrefix = '/libs/jsdos/';
-              DosWindow.Dos(screenRef.current as HTMLDivElement)
+              window.emulators.pathPrefix = '/libs/jsdos/';
+              window
+                .Dos(screenRef.current as HTMLDivElement)
                 .run(objectURL)
                 .then((ci) => {
                   appendFileToTitle(url);
@@ -52,6 +52,6 @@ const useJSDOS = (
         );
     }
   }, [dos, updateWindowSize]);
-};
+}
 
 export default useJSDOS;

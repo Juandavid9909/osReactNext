@@ -5,15 +5,15 @@ export type EventCallback = (data: number[]) => void;
 type EventListener = (event: string, callback: EventCallback) => void;
 
 export type V86Starter = {
-  add_listener: EventListener;
-  destroy: () => void;
-  lock_mouse: () => void;
-  remove_listener: EventListener;
+  add_listener: EventListener,
+  destroy: () => void,
+  lock_mouse: () => void,
+  remove_listener: EventListener
 };
 
 export type V86 = {
-  emulator: V86Starter | null;
-  lockMouse: () => void;
+  emulator: V86Starter | null,
+  lockMouse: () => void
 };
 
 type V86Image = {
@@ -24,19 +24,23 @@ type V86Image = {
 };
 
 type V86Config = typeof v86Config & {
-  memory_size: number;
-  vga_memory_size: number;
-  boot_order: number;
-  cdrom?: V86Image;
-  fda?: V86Image;
-  screen_container: HTMLDivElement | null;
+  memory_size: number,
+  vga_memory_size: number,
+  boot_order: number,
+  cdrom?: V86Image,
+  fda?: V86Image,
+  screen_container: HTMLDivElement | null
 };
 
 interface V86Constructor {
-  new (config: V86Config): V86Starter;
+  new (config: V86Config): V86Starter
 }
 
-export type WindowWithV86Starter = Window &
-  typeof globalThis & { V86Starter: V86Constructor };
-
-export type NavigatorWithMemory = Navigator & { deviceMemory: number };
+declare global {
+  interface Window {
+    V86Starter: V86Constructor
+  }
+  interface Navigator {
+    deviceMemory: number
+  }
+}
