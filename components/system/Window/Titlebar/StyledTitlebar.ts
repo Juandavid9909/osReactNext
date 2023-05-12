@@ -1,16 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledTitlebar = styled.header`
-  background-color: ${ ({ theme }) => theme.colors.titlebar.background };
+  background-color: ${({ theme }) => theme.colors.titlebar.background};
   border-bottom: 1px solid #000;
   display: flex;
-  height: ${ ({ theme }) => theme.sizes.titlebar.height };
+  height: ${({ theme }) => theme.sizes.titlebar.height};
 
   h1 {
-    color: ${ ({ theme }) => theme.colors.titlebar.text };
+    color: ${({ theme }) => theme.colors.titlebar.text};
     display: flex;
     flex-grow: 1;
-    font-size: ${ ({ theme }) => theme.sizes.titlebar.fontSize };
+    font-size: ${({ theme }) => theme.sizes.titlebar.fontSize};
     font-weight: normal;
     min-width: 0;
 
@@ -18,12 +18,14 @@ const StyledTitlebar = styled.header`
       align-items: center;
       display: flex;
       min-width: inherit;
+      position: relative;
+      top: -1px;
 
       img {
-        height: ${ ({ theme }) => theme.sizes.titlebar.iconSize };
+        height: ${({ theme }) => theme.sizes.titlebar.iconSize};
         image-rendering: pixelated;
-        margin: ${ ({ theme }) => theme.sizes.titlebar.iconMargin };
-        width: ${ ({ theme }) => theme.sizes.titlebar.iconSize };
+        margin: ${({ theme }) => theme.sizes.titlebar.iconMargin};
+        width: ${({ theme }) => theme.sizes.titlebar.iconSize};
       }
 
       figcaption {
@@ -43,25 +45,27 @@ const StyledTitlebar = styled.header`
       display: flex;
       place-content: center;
       place-items: center;
-      width: ${ ({ theme }) => theme.sizes.titlebar.buttonWidth };
+      width: ${({ theme }) => theme.sizes.titlebar.buttonWidth};
 
       svg {
-        fill: ${ ({ theme }) => theme.colors.titlebar.text };
+        fill: ${({ theme }) => theme.colors.titlebar.text};
         margin: 0 1px 2px 0;
-        width: ${ ({ theme }) => theme.sizes.titlebar.buttonIconWidth };
+        width: ${({ theme }) => theme.sizes.titlebar.buttonIconWidth};
       }
 
       &.minimize {
         svg {
           margin-bottom: 1px;
+          margin-right: 0;
         }
       }
 
       &:hover {
-        background-color: ${ ({ theme }) => theme.colors.titlebar.backgroundHover };
+        background-color: ${({ theme }) =>
+          theme.colors.titlebar.backgroundHover};
 
         &.close {
-          background-color: ${ ({ theme }) => theme.colors.titlebar.closeHover };
+          background-color: ${({ theme }) => theme.colors.titlebar.closeHover};
           transition: background-color 0.25s ease;
         }
       }
