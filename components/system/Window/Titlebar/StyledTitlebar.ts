@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
-const StyledTitlebar = styled.header`
-  background-color: ${({ theme }) => theme.colors.titlebar.background};
-  border-bottom: 1px solid #000;
+type StyledTitlebarProps = {
+  foreground: boolean
+};
+
+const StyledTitlebar = styled.header<StyledTitlebarProps>`
+  background-color: ${({ foreground, theme }) =>
+    foreground
+      ? theme.colors.titlebar.background
+      : theme.colors.titlebar.backgroundInactive};
+  border-bottom: ${({ foreground, theme }) =>
+    foreground
+      ? `1px solid ${theme.colors.titlebar.background}`
+      : `1px solid ${theme.colors.titlebar.backgroundInactive}`};
   display: flex;
   height: ${({ theme }) => theme.sizes.titlebar.height};
 
   h1 {
-    color: ${({ theme }) => theme.colors.titlebar.text};
+    color: ${({ foreground, theme }) =>
+      foreground
+        ? theme.colors.titlebar.text
+        : theme.colors.titlebar.textInactive};
     display: flex;
     flex-grow: 1;
     font-size: ${({ theme }) => theme.sizes.titlebar.fontSize};
@@ -40,7 +53,7 @@ const StyledTitlebar = styled.header`
     display: flex;
 
     button {
-      border-left: 1px solid #000;
+      border-left: 1px solid transparent;
       box-sizing: content-box;
       display: flex;
       place-content: center;
@@ -48,7 +61,10 @@ const StyledTitlebar = styled.header`
       width: ${({ theme }) => theme.sizes.titlebar.buttonWidth};
 
       svg {
-        fill: ${({ theme }) => theme.colors.titlebar.text};
+        fill: ${({ foreground, theme }) =>
+          foreground
+            ? theme.colors.titlebar.text
+            : theme.colors.titlebar.buttonInactive};
         margin: 0 1px 2px 0;
         width: ${({ theme }) => theme.sizes.titlebar.buttonIconWidth};
       }
@@ -63,6 +79,10 @@ const StyledTitlebar = styled.header`
       &:hover {
         background-color: ${({ theme }) =>
           theme.colors.titlebar.backgroundHover};
+
+        svg {
+          fill: ${({ theme }) => theme.colors.titlebar.text};
+        }
 
         &.close {
           background-color: ${({ theme }) => theme.colors.titlebar.closeHover};
@@ -80,7 +100,8 @@ const StyledTitlebar = styled.header`
 
       &:disabled {
         svg {
-          fill: rgb(50, 50, 50);
+          fill: ${({ foreground }) =>
+            foreground ? 'rgb(50, 50, 50)' : 'rgb(60, 60, 60)'};
         }
 
         &:hover {

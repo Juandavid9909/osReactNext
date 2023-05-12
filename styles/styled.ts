@@ -24,8 +24,11 @@ declare module "styled-components" {
       titlebar: {
         background: string,
         backgroundHover: string,
+        backgroundInactive: string,
+        buttonInactive: string,
         closeHover: string,
-        text: string
+        text: string,
+        textInactive: string
       },
       window: {
         background: string,
