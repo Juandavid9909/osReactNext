@@ -1,8 +1,8 @@
-import "styled-components";
+import 'styled-components';
 
-export type WallpaperEffect = (element: HTMLElement | null) => () => void;
+export type WallpaperEffect = (el: HTMLElement | null) => void;
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       background: string,
@@ -10,7 +10,7 @@ declare module "styled-components" {
         background: string,
         border: string,
         text: string,
-        textShadow: string
+        textShadow: string,
       },
       highlight: string,
       startButton: string,
@@ -18,7 +18,7 @@ declare module "styled-components" {
         active: string,
         activeHover: string,
         background: string,
-        hover: string
+        hover: string,
       },
       text: string,
       titlebar: {
@@ -28,40 +28,40 @@ declare module "styled-components" {
         buttonInactive: string,
         closeHover: string,
         text: string,
-        textInactive: string
+        textInactive: string,
       },
       window: {
         background: string,
         outline: string,
         outlineInactive: string,
         shadow: string,
-        shadowInactive: string
-      }
+        shadowInactive: string,
+      },
     },
     formats: {
-      date: Intl.DateTimeFormatOptions
-      time: Intl.DateTimeFormatOptions
+      date: Intl.DateTimeFormatOptions,
+      time: Intl.DateTimeFormatOptions,
     },
     sizes: {
       clock: {
         fontSize: string,
-        width: string
+        width: string,
       },
       fileEntry: {
         fontSize: string,
         iconSize: string,
-        letterSpacing: string
+        letterSpacing: string,
       },
       fileManager: {
         columnGap: string,
         gridEntryHeight: string,
         gridEntryWidth: string,
         padding: string,
-        rowGap: string
+        rowGap: string,
       },
       startButton: {
         iconSize: string,
-        width: string
+        width: string,
       },
       taskbar: {
         blur: string,
@@ -69,11 +69,11 @@ declare module "styled-components" {
           borderSize: string,
           fontSize: string,
           icon: {
-            size: string
+            size: string,
           },
-          maxWidth: string
+          maxWidth: string,
         },
-        height: string
+        height: string,
       },
       titlebar: {
         buttonIconWidth: string,
@@ -81,13 +81,13 @@ declare module "styled-components" {
         fontSize: string,
         height: string,
         iconMargin: string,
-        iconSize: string
+        iconSize: string,
       },
       window: {
         lineHeight: string,
-        outline: string
-      }
-    }
-    wallpaper?: WallpaperEffect
+        outline: string,
+      },
+    },
+    wallpaper?: WallpaperEffect,
   }
 }
