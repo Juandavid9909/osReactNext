@@ -5,7 +5,7 @@ const fps = 15;
 const timePerFrame = MILLISECONDS_IN_SECOND / fps;
 
 type ColorCycle = {
-  onDestroy: () => void;
+  stop: () => void;
 };
 
 const colorCycle = (initialColor: number, callback: (newColor: number) => void): ColorCycle => {
@@ -29,9 +29,9 @@ const colorCycle = (initialColor: number, callback: (newColor: number) => void):
 
   animationFrameId = requestAnimationFrame(updateColor);
 
-  const onDestroy = () => cancelAnimationFrame(animationFrameId);
+  const stop = () => cancelAnimationFrame(animationFrameId);
 
-  return { onDestroy };
+  return { stop };
 }
 
 export default colorCycle;
