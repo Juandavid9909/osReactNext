@@ -6,16 +6,16 @@
     "node": true
   },
   "extends": [
-    "standard-with-typescript",
-    "eslint:recommend",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript",
-    "plugin:jest/recommended",
-    "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:testing-library/react",
-    "prettier"
+    // "standard-with-typescript",
+    // "eslint:recommend",
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:import/typescript",
+    // "plugin:jest/recommended",
+    // "plugin:prettier/recommended",
+    // "plugin:react/recommended",
+    // "plugin:react-hooks/recommended",
+    // "plugin:testing-library/react",
+    // "prettier"
   ],
   "globals": {
     "React": "readonly"
